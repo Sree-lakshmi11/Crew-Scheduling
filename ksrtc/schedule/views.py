@@ -4,7 +4,7 @@ from .algorithms.preprocessing import processor_main
 import os
 
 def print_schedule(request):
-    try:
+ 
         # Define the path to the Excel dataset
         dataset_path = 'psl.xlsx' 
         if os.path.exists(dataset_path):
@@ -26,8 +26,4 @@ def print_schedule(request):
                 return HttpResponse("Error occurred during preprocessing ")
         else:
             return HttpResponse("File not found")
-    except Exception as e:
-        # Log the exception for debugging purposes
-        print(f"An exception occurred: {e}")
-        # Return an HTTP response indicating an internal server error
-        return HttpResponse("An error occurred while processing the request. Please try again later.")
+     
