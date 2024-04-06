@@ -12,13 +12,13 @@ def generate_otp(length=6):
     return otp
 
 def send_otp_phone(phone_number, otp):
-    account_sid = 'AC4c3e3201934e14e0cb3244e5903ed4cf'  # Replace with your Twilio account SID
-    auth_token = '2bd09aaf17839de5ef535adcbec075b4'  # Replace with your Twilio auth token
-    twilio_phone_number = '+12513060608'  # Replace with your Twilio phone number
+    account_sid =  ''  # Replace with your Twilio account SID
+    auth_token =  ''  # Replace with your Twilio auth token
+    twilio_phone_number = '' # Replace with your Twilio phone number
 
     client = Client(account_sid, auth_token)
     message = client.messages.create(
-        body=f'Your KSRTC account login OTP is: {otp}',
+        body=f'Your KSRT account login OTP is: {otp}',
         from_ = twilio_phone_number,
         to = phone_number
     )
