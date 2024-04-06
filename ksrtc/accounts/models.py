@@ -2,12 +2,11 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 class Employee(AbstractUser):
-    username = models.CharField(max_length=150, unique=True)
-    password = models.CharField(max_length=128)
-
-    # No need to add password field explicitly
-    # Django's AbstractUser already includes password field
+    # Add your custom fields here
+    phone_number = models.CharField(max_length=20, default='')
+    otp = models.CharField(max_length=6, null=True, blank=True) 
+    # Specify which fields are required
+    REQUIRED_FIELDS = ['phone_number']
 
     def __str__(self):
         return self.username
-
